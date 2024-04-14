@@ -1,43 +1,25 @@
-body {
-  max-width: 100vw;
-  min-height: 100vh;
-  max-height: 100vh;
-  background-color: #bdc3c7;
-  font-family: sans-serif;
+.rcrd-logo {
+  max-width: 50px;
+  margin-right: 1rem;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  margin: 1rem;
-  padding: 1rem;
-  box-shadow: 8px 16px 16px hsl(0deg 0% 0% / 0.25);
+@media (max-width: 576px) {
+  .navbar-brand {
+    margin: 0;
+  }
+  .navbar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem 0;
+    padding: 0.5rem 0;
+  }
 }
 
-h1 {
-  padding: 0;
-  margin: 0;
+.card {
+  transition: background-color 0.25s ease;
 }
 
-ul {
-  display: flex;
-  gap: 1rem;
-  margin: 2rem 0 0 0 0;
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.4rem;
-  padding: 1rem;
-}
-
-img {
-  max-width: 200px;
-  width: 100%;
-  display: block;
+.card:hover {
+  background-color: rgba(rgba(var(--bs-secondary-bg-rgb), 0.5));
 }

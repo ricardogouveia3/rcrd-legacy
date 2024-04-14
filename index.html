@@ -1,27 +1,82 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RCRD Legacy Versions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Ricardo Gouveia">
+  <title>RCRD Legacy versions</title>
+  <link rel="canonical" href="https://legacy.rcrd.dev/">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
-<body>
-  <main>
-    <h1>RCRD Legacy Versions</h1>
-    <ul>
-      <li><a href="v1/index.html">
-          <img src="assets/img/previews/v1.jpg" alt="RCRD V1">
-          <span>RCRD V1</span>
-        </a></li>
-      <li><a href="v2/index.html">V2</a></li>
-      <!-- <li><a href="v3/index.html">V3</a></li> -->
-    </ul>
-  </main>
-</body>
+<body class="bg-body-tertiary">
 
-<link rel="stylesheet" href="assets/css/normalize.css" />
-<link rel="stylesheet" href="assets/css/style.css" />
+  <header data-bs-theme="dark">
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="navbar-container container">
+        <a href="/" class="navbar-brand d-flex align-items-center">
+          <img src="assets/img/logo.svg" alt="RCRD logo" class="rcrd-logo">
+          <strong>legacy versions</strong>
+        </a>
+        <a href="https://rcrd.dev" type="button" class="btn btn-outline-light">RCRD site &#8594;</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <div class="col">
+            <a class="card mb-3 text-decoration-none" href="v1/">
+              <img src="assets/img/previews/v1.jpg" class="card-img-top" alt="rcrd v1">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <span class="card-text">V1</span><small class="text-body-secondary">2015</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a class="card mb-3 text-decoration-none" href="v2/">
+              <img src="assets/img/previews/v2.jpg" class="card-img-top" alt="rcrd v2">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <span class="card-text">V2</span><small class="text-body-secondary">2017</small>
+              </div>
+            </a>
+          </div>
+
+          <!-- 
+          <div class="col">
+            <a class="card mb-3 text-decoration-none" href="v3/">
+              <img src="assets/img/previews/v3.jpg" class="card-img-top" alt="rcrd v3">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <span class="card-text">V3</span><small class="text-body-secondary">2019</small>
+              </div>
+            </a>
+          </div>
+          -->
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-body-secondary py-5 bg-white fixed-bottom">
+      <div class="container d-flex align-items-center">
+        <p class="mb-1">RCRD - <small>2024</small></p>
+      </div>
+    </footer>
+  </main>
+
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 
 </html>
