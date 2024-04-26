@@ -1,28 +1,35 @@
 import React from "react";
-import logo from "./logo.svg";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import CardGrid from "./components/CardGrid";
+import Card from "./components/Card";
 
 function App() {
   return (
-    <div className="text-center">
-      <header className="bg-[#282c34] min-h-[100vh] flex text-white flex-col items-center justify-center text-[calc(10px + 2vmin)]">
-        <img
-          src={logo}
-          className="pointer-events-none h-[40vmin] animate-[spin_20s_linear_infinite]"
-          alt="logo"
-        />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="text-[#61dafb]"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <CardGrid>
+        <Card
+          img={"/projects/site/v1/preview.jpg"}
+          url={"/projects/site/v1"}
+          title={"Site V1"}
+          year={"2015"}
+        ></Card>
+        <Card
+          img={"/projects/site/v2/preview.jpg"}
+          url={"/projects/site/v2"}
+          title={"Site V2"}
+          year={"2017"}
+        ></Card>
+        <Card
+          img={"/projects/portfolio/v1/preview.jpg"}
+          url={"/projects/portfolio/v1"}
+          title={"Portfolio V1"}
+          year={"2017"}
+        ></Card>
+      </CardGrid>
+      <Footer />
+    </>
   );
 }
 
