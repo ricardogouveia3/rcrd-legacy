@@ -3,7 +3,7 @@ name: Deploy Vite App to Pages
 on:
   push:
     branches: ["main"]
-  workflow_dispatch:
+  pull_request:
 
 permissions:
   contents: read
@@ -15,23 +15,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  install:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
         with:
-          node-version: "20"
-          cache: "pnpm"
-
-      - name: Enable Corepack
-        run: corepack enable # Enables Corepack to manage package managers
+          version: 8 # Optional: specify a pnpm version
 
       - name: Install dependencies
         run: pnpm install # Use pnpm to install dependencies
