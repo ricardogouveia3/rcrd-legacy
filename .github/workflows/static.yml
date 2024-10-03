@@ -48,6 +48,8 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
+        with:
+          version: latest # Set pnpm to the latest version
 
       - name: Build
         run: pnpm run build # Build the project
