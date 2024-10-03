@@ -1,45 +1,36 @@
-import Header from "./components/Header";
-import CardGrid from "./components/CardGrid";
-import Card from "./components/Card";
-import Footer from "./components/Footer";
-
-import previewSiteV1 from "./assets/site-v1.jpg";
-import previewSiteV2 from "./assets/site-v2.jpg";
-import previewSiteV3 from "./assets/site-v3.jpg";
-import previewPortfolio from "./assets/portfolio.jpg";
+import { useState } from "react";
 
 function App() {
+  const [selectedProject, setSelectedProject] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedProject(event.target.value);
+  };
+
   return (
-    <>
-      <Header />
-      <CardGrid>
-        <Card
-          img={previewSiteV1}
-          url={"/projects/site/v1"}
-          title={"Site V1"}
-          year={"2015"}
-        ></Card>
-        <Card
-          img={previewSiteV2}
-          url={"/projects/site/v2"}
-          title={"Site V2"}
-          year={"2017"}
-        ></Card>
-        <Card
-          img={previewSiteV3}
-          url={"/projects/site/v3"}
-          title={"Site V3"}
-          year={"2017"}
-        ></Card>
-        <Card
-          img={previewPortfolio}
-          url={"/projects/portfolio/v1"}
-          title={"Portfolio V1"}
-          year={"2017"}
-        ></Card>
-      </CardGrid>
-      <Footer />
-    </>
+    <div>
+      <header>
+        <h1>Exibir Projetos Antigos</h1>
+        <label htmlFor="project-select">Selecione o Projeto:</label>
+        <select id="project-select" onChange={handleChange}>
+          <option value="">-- Selecione --</option>
+          <option value="projects/site-v1/index.html">Site V1</option>
+          <option value="projects/site-v2/index.html">Site V2</option>
+          <option value="projects/site-v3/index.html">Site V3</option>
+          <option value="projects/portfolio/index.html">Portfolio</option>
+        </select>
+      </header>
+
+      {selectedProject && (
+        <iframe
+          src={selectedProject}
+          title="Projeto"
+          sandbox="allow-same-origin allow-scripts"
+          style={{ width: "100%", height: "80vh", border: "none" }}
+          loading="lazy"
+        />
+      )}
+    </div>
   );
 }
 
