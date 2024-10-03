@@ -1,5 +1,3 @@
-import React from "react";
-
 interface cardProps {
   img: string;
   url: string;
